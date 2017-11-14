@@ -22,7 +22,6 @@ public class test {
 
     public static void main(String[] args) {
     	new test().calculateSeats();
-//    	new test().connectMangoDB();
     }
     
 	class Seats{
@@ -43,10 +42,10 @@ public class test {
     	Seats seat = new Seats();
     	
     	Map<String, Double> myMap = new TreeMap<String, Double>();
-    	myMap.put("a",  15000.0);
-    	myMap.put("b",  6667.0);
-    	myMap.put("c",  3125.0);
-    	myMap.put("d",  6459.0);
+    	myMap.put("A",  15000.0);
+    	myMap.put("B",  6667.0);
+    	myMap.put("C",  6459.0);
+    	myMap.put("D",  3125.0);
     	seat.setSeats(15);
     	int seats = seat.getSeats();
     	Map<String, String> output = new HashMap<String, String>();
@@ -131,22 +130,4 @@ public class test {
         }
     }
     
-    public void connectMangoDB(){
-    
-    			MongoClient mongo = new MongoClient( "localhost" , 27017 ); 
-    			MongoDatabase database = mongo.getDatabase("local");
-    		      System.out.println(database);  
-    	
-    		      
-    		      MongoCollection<Document> collection = database.getCollection("pangdb"); 
-    		      System.out.println("Collection myCollection selected successfully "); 
-    		      Document document = new Document("title", "MongoDB") 
-    		    	      .append("id", 1)
-    		    	      .append("description", "database") 
-    		    	      .append("likes", 100) 
-    		    	      .append("url", "http://www.tutorialspoint.com/mongodb/") 
-    		    	      .append("by", "tutorials point");  
-    		    	      collection.insertOne(document); 
-    		    	      System.out.println("Document inserted successfully");     
-    }	
 }
